@@ -1,6 +1,6 @@
 // if(live_call()) return live_enabled;
 
-draw_set_font(fnt_pixel);
+draw_set_font(global.font);
 font_height = string_height("ASWD/6iagdiuTL");
 
 if (instance_exists(obj_camera)) {
@@ -10,14 +10,13 @@ if (instance_exists(obj_camera)) {
 		var _height = obj_camera.height;
 
 		draw_set_halign(fa_right);
-		draw_set_font(fnt_pixel);
 	
-		for (var i = _size - 1; i >= 0; i--) {
-			draw_text(_width - 2, 2 + font_height * i + time/3, messages[| i]);	
-		}
-		
-		if (time > 0 && (time % (font_height * 3)) == 0) {
-			ds_list_delete(messages, 0);
+		for (var i = 0; i < _size; i++) {
+			draw_text(_width - 2, 2 + font_height * (message_timer[| i]++ / 60), messages[| i]);
+			if (message_timer[| i] >= message_time[| i]) {
+				textbox_remove(i--);
+				_size--;
+			}
 		}
 
 		draw_set_halign(fa_left);

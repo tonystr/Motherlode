@@ -45,6 +45,3 @@ for (var i = 0; i < 2; i++) {
 
 x -= _rx;
 y -= _ry;
-
-/*draw_set_color(c_blue);
-if (drill_grid_x >= 0) draw_line(x, y - 16, drill_grid_x * 32, drill_grid_y * 32);

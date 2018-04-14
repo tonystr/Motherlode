@@ -7,6 +7,10 @@ width	= room_width  div grid_size;
 height	= room_height div grid_size;
 grid	= ds_grid_create(width, height);
 
+surf_width  = obj_camera.width;
+surf_height = obj_camera.height;
+surf = surface_create(surf_width, surf_height);
+
 enum ORE {
 	BRONZE,
 	IRON,
@@ -15,13 +19,14 @@ enum ORE {
 }
 
 ore_sprite = [spr_bronze, spr_iron, spr_silver, spr_gold];
+ore_name = ["Bronze", "Iron", "Silver", "Gold"];
 
 for (var i = 0; i < width * height; i++) {
-	var _in = (i <= width) || (irandom(6) != 6);
+	var _in = (i <= width) || (irandom(5) != 5);
 	if (_in) _in += (i > width) && irandom(7) == 7;
 	if (_in > 1) {
 		var _rand = random(1);
-		if (_rand < (i div width) / height) _in = 2;
+		if (_rand < (i div width + 2) / height) _in = 2;
 		_rand = random(1 - _rand);
 		if (_rand < (i div width) / height) _in = 3;
 		_rand = random(1 - _rand);
@@ -43,6 +48,6 @@ for (var i = 0; i < width * height; i++) {
 		_index += (_x - 1 >= 0)		&& grid[# _x - 1, _y];
 		_index += (_y - 1 <= 0)		&& grid[# _x, _y - 1];
 		
-		if (random(_index * _index) > 3) grid[# _x, _y] = 1;
+		if (random(_index * _index) > 4) grid[# _x, _y] = 1;
 	}
 }

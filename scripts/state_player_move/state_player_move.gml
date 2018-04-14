@@ -1,26 +1,25 @@
 /// @func state_player_move
 
-var _xaxis = keyboard_check(ord("D")) - keyboard_check(ord("A"));
-var _yaxis = keyboard_check(ord("S")) - keyboard_check(ord("W"));
-var _dir   = point_direction(0, 0, _xaxis, _yaxis);
+var _dir   = point_direction(0, 0, key_xaxis, key_yaxis);
 
 var _grav = (grav - yvel) * fric;
 
 yvel += _grav;
 
-if (_xaxis != 0 || _yaxis != 0) {
+if (key_xaxis != 0 || key_yaxis != 0) {
 	xvel += (xacc + lengthdir_x(spd, _dir) - xvel) * fric;
-	yvel += (yacc + lengthdir_y(spd + _grav / fric, _dir) * (_yaxis < 0) - yvel) * fric;
+	var _min = 8;
+	if (key_yaxis < 0) yvel += (yacc + lengthdir_y(spd + _grav / fric, _dir) - yvel) / (_min + inv_filled * 5 / room_speed) * _min * fric;
 
-	if (_xaxis != 0) image_xscale_target = sign(_xaxis);
+	if (key_xaxis != 0) image_xscale_target = sign(key_xaxis);
 	
 	// Change module
-	if (_yaxis > 0 && module_active != MODULE.DRILL_Y) {
+	if (key_yaxis > 0 && module_active != MODULE.DRILL_Y) {
 		module_prev = module_active;
 		module_active = MODULE.DRILL_Y;
 		module_interp = 0;
 		
-	} else if (_yaxis < 0 && module_active != MODULE.PROPELLER) {
+	} else if (key_yaxis < 0 && module_active != MODULE.PROPELLER) {
 		module_prev = module_active;
 		module_active = MODULE.PROPELLER;
 		module_interp = 0;
@@ -29,7 +28,7 @@ if (_xaxis != 0 || _yaxis != 0) {
 	xvel -= xvel * fric;
 }
 
-if (_yaxis == 0 && module_active != MODULE.DRILL_X) {
+if (key_yaxis == 0 && module_active != MODULE.DRILL_X) {
 	module_prev = module_active;
 	module_active = MODULE.DRILL_X;
 	module_interp = 0;
@@ -64,7 +63,7 @@ if (yvel == 0) {
 	xvel -= xvel * fric * 2;	
 }
 
-if ((xvel == 0 && _xaxis != 0 && _yaxis == 0 && yvel == 0) || (yvel == 0 && _yaxis > 0 && _xaxis == 0)) {
+if (!state_wait && ((xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0) || (yvel == 0 && key_yaxis > 0 && key_xaxis == 0))) {
 	if (angle_difference(dir_last, _dir) < 28) {
 		if (drill < drill_boundary) {
 			drill++;
@@ -81,3 +80,20 @@ if ((xvel == 0 && _xaxis != 0 && _yaxis == 0 && yvel == 0) || (yvel == 0 && _yax
 } else drill = 0;
 
 dir_last = _dir;
+
+if (place_meeting(x, y, par_store) && magnitude(xvel, yvel) < 160 / room_speed) {
+	var _shop = instance_place(x, y, par_store);
+	if (_shop != shop_entered) {
+		
+		shop_entered   = _shop;
+		camera_xoffset = _shop.x - x;
+		camera_yoffset = _shop.y - y;
+		draw_menu = _shop.object_index;
+		
+		_shop.active = true;
+		
+		state = state_player_shop;
+		xvel = 0;
+		yvel = 0;
+	}
+} else shop_entered = noone;
