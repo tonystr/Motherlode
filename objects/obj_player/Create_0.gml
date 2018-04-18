@@ -43,6 +43,9 @@ fuel = 60;
 fuel_max = 60;
 fuel_per_second  = 1 / room_speed;
 
+hull = 60;
+hull_max = 60;
+
 xvel = 0;
 yvel = 0;
 

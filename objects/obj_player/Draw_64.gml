@@ -285,17 +285,35 @@ if (draw_menu) {
 	draw_set_valign(fa_top);
 } 
 
-var i = 0;
+var _hullpx, _shrink;
+var _y = 2;
+var _x = 2;
 var _fh = string_height("OUADBynbasdnio/") + 2;
+if (hull > 0) {
+	_hullpx = ((hull - 2.4) / (hull_max - 2.4)) * 19;
+	_shrink = min(hull, 3) / 3;
 
-draw_text(2, 2 + _fh * i++, "Depth: " + string(-ceil(y / 6.4)) + "ft");
-draw_text(2, 2 + _fh * i++, "$ " + string(money));
+	if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
+	if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 2, _x, _y + 28, 1, -(hull / hull_max) * .7, 0, c_white, 1);
+	draw_sprite_ext(spr_hull_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
+}
+draw_sprite(spr_hull_bar, 0, _x, _y);
 
-/*
-draw_set_color($564e47);
-draw_rectangle(2, 2, 10, 18, false);
+_x += 30;
 
-draw_set_color($070611);
-//draw_rectangle(3, 17, 9, 16 - 13 * fuel / fuel_max, false);
+if (fuel > 0) {
+	_hullpx = ((fuel - 2.4) / (fuel_max - 2.4)) * 19;
+	_shrink = min(fuel, 3) / 3;
 
-draw_set_color(c_white);
+	if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
+	if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 2, _x, _y + 28, 1, -(fuel / fuel_max) * .7, 0, c_white, 1);
+	draw_sprite_ext(spr_fuel_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
+}
+draw_sprite(spr_fuel_bar, 0, _x, _y);
+
+_x -= 30;
+_y += 32;
+draw_text(_x, _y, "Depth: " + string(-ceil(y / 6.4)) + "ft");
+_y += _fh;
+draw_text(_x, _y, "$ " + string(money));
+_y += _fh;
