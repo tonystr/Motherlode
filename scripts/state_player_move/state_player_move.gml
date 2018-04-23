@@ -36,6 +36,9 @@ if (key_yaxis == 0 && module_active != MODULE.DRILL_X) {
 
 image_speed = abs(xvel);
 
+var _prev_xvel = xvel;
+var _prev_yvel = yvel;
+
 if (instance_exists(obj_chunk) && grid_meeting(x + xvel, y, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
 	var _sgn = sign(xvel);
 	while (!grid_meeting(x + _sgn, y, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
@@ -63,8 +66,8 @@ if (yvel == 0) {
 	xvel -= xvel * fric * 2;	
 }
 
-if (!state_wait && ((xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0) || (yvel == 0 && key_yaxis > 0 && key_xaxis == 0))) {
-	if (angle_difference(dir_last, _dir) < 28) {
+if (xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0) || (yvel == 0 && key_yaxis > 0 && key_xaxis == 0) {
+	if (!state_wait && angle_difference(dir_last, _dir) < 28) {
 		if (drill < drill_boundary) {
 			drill++;
 		} else {
@@ -80,6 +83,15 @@ if (!state_wait && ((xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0)
 } else drill = 0;
 
 dir_last = _dir;
+
+if (yvel == 0 && _prev_yvel != 0) {
+	var _dis = _prev_yvel - yvel;
+	
+	if (_dis > 200 / room_speed) {
+		hit_timer = hit_time;
+		hull -= _dis * 4;
+	}
+}
 
 if (place_meeting(x, y, par_store) && magnitude(xvel, yvel) < 160 / room_speed) {
 	var _shop = instance_place(x, y, par_store);

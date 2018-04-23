@@ -1,7 +1,9 @@
-/// @func console_log
-/// @arg values
+/// @func debug_message_parse_array
+/// @arg array
 
-var _str = "DEBUG: ";
+var _arr = argument0;
+var _len = array_length_1d(_arr);
+var _str = "[";
 var _com = false;
 var _spa = false;
 
@@ -21,7 +23,6 @@ for(var i = 0; i < argument_count; i++) {
         var _lastchr  = string_char_at(_val, string_length(_val));
         _com = (_lastchr == string_lettersdigits(_lastchr));
         _spa = (_lastchr != " ");
-
         
         _str += _val;
         
@@ -30,4 +31,4 @@ for(var i = 0; i < argument_count; i++) {
     }
 }
 
-show_debug_message(_str);
+return _str + "]";

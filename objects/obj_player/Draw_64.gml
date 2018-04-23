@@ -22,7 +22,7 @@ if (draw_menu) {
 	draw_set_color(c_white);
 	
 	switch (draw_menu) {
-		case obj_miningdeposit: #region 
+		case obj_miningdeposit:		#region
 			var _h = 0;
 			var _total = 0;
 			var _x = lerp(_c[0], _c[2], .56);
@@ -104,7 +104,7 @@ if (draw_menu) {
 			draw_surface(_surf, _sx, _sy);
 			surface_free(_surf);
 		break; #endregion
-		case obj_emendationstation: #region
+		case obj_emendationstation:	#region
 			var _mod  = 3;
 			var _size = 32;
 			var _pad  = 16;
@@ -200,11 +200,47 @@ if (draw_menu) {
 			draw_text(_midx - string_width(_item_price) / 2, lerp(_c[1], _c[3], .48), _item_price);
 			
 		break; #endregion
+		case obj_repairstation:		#region
+			var _mx = lerp(_c[0], _c[2], .5);
+			var _my = lerp(_c[1], _c[3], .5);
+			var _wth = 128;
+			var _hth = 48;
+			_my += _hth / 3;
+			
+			var _price = ceil((hull_max - hull) * 10);
+			var _select = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _mx - _wth / 2, _my - _hth / 2, _mx + _wth / 2, _my + _hth / 2);
+			
+			draw_set_color((_select ? $5be02f : $56c128));// : $3c6022);
+			draw_rectangle(_mx - _wth / 2, _my - _hth / 2, _mx + _wth / 2, _my + _hth / 2, false);
+			draw_set_color(c_white);
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_middle);
+			draw_text(_mx, _my - _hth, "$" + string(_price));
+			draw_text(_mx, _my, "Full Repair");
+			draw_set_halign(fa_left);
+			draw_set_valign(fa_top);
+			
+			if (_select && input(BUTTON.SELECT, BTYPE.PRESSED) || mouse_check_button_pressed(mb_left)) {
+				if (hull == hull_max) {
+					textbox_add("Hull is already at max", -1, true);	
+				} else if (money == 0) {
+					textbox_add("No money left", -1, true);	
+				} else {
+				
+					hull += (min(_price, money) / 10);
+					money = max(money - _price, 0);
+				
+					textbox_add("Hull Repaired  -$" + string(_price));
+					if (money == 0) textbox_add("Used all money on repairs", -1, true);
+				}
+			}
+			
+		break; #endregion
 	}
+	
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_color(c_white);
-	
 } else if (inv_visible) {
 	
 	var _inv_y_span = obj_camera.height - inv_slot_size * inv_height;
@@ -285,35 +321,48 @@ if (draw_menu) {
 	draw_set_valign(fa_top);
 } 
 
-var _hullpx, _shrink;
-var _y = 2;
-var _x = 2;
-var _fh = string_height("OUADBynbasdnio/") + 2;
-if (hull > 0) {
-	_hullpx = ((hull - 2.4) / (hull_max - 2.4)) * 19;
-	_shrink = min(hull, 3) / 3;
+if (!surface_exists(gui_surf)) gui_surf = surface_create(obj_camera.width, obj_camera.height);
 
-	if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
-	if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 2, _x, _y + 28, 1, -(hull / hull_max) * .7, 0, c_white, 1);
-	draw_sprite_ext(spr_hull_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
+surface_set_target(gui_surf);
+	draw_clear_alpha(hit_timer > 0 ? c_red : c_white, hit_timer / hit_time);
+
+	var _hullpx, _shrink;
+	var _y = 2;
+	var _x = 2;
+	var _fh = string_height("OUADBynbasdnio/") + 2;
+
+	if (hull > 0) {
+		_hullpx = ((hull - 2.4) / (hull_max - 2.4)) * 19;
+		_shrink = min(hull, 3) / 3;
+
+		if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
+		if (_shrink == 1) draw_sprite_ext(spr_hull_bar, 2, _x, _y + 28, 1, -(hull / hull_max) * .7, 0, c_white, 1);
+		draw_sprite_ext(spr_hull_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
+	}
+	draw_sprite(spr_hull_bar, 0, _x, _y);
+
+	_x += 30;
+
+	if (fuel > 0) {
+		_hullpx = ((fuel - 2.4) / (fuel_max - 2.4)) * 19;
+		_shrink = min(fuel, 3) / 3;
+		
+		if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
+		if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 2, _x, _y + 28, 1, -(fuel / fuel_max) * .7, 0, c_white, 1);
+		draw_sprite_ext(spr_fuel_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
+	}
+	draw_sprite(spr_fuel_bar, 0, _x, _y);
+
+	_x = 2;
+	_y += 32;
+	draw_text(_x, _y, "Depth: " + string(-ceil(y / 6.4)) + "ft");
+	_y += _fh;
+	draw_text(_x, _y, "$ " + string(money));
+	_y += _fh;
+	
+surface_reset_target();
+draw_surface_ext(gui_surf, 0, 0, 1, 1, 0, c_white, sprite_index == spr_explosion ? 1 - image_index / image_number : 1);
+
+if (state == state_player_death) {
+	
 }
-draw_sprite(spr_hull_bar, 0, _x, _y);
-
-_x += 30;
-
-if (fuel > 0) {
-	_hullpx = ((fuel - 2.4) / (fuel_max - 2.4)) * 19;
-	_shrink = min(fuel, 3) / 3;
-
-	if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 1, _x, _y, _shrink, _shrink, 0, c_white, 1);
-	if (_shrink == 1) draw_sprite_ext(spr_fuel_bar, 2, _x, _y + 28, 1, -(fuel / fuel_max) * .7, 0, c_white, 1);
-	draw_sprite_ext(spr_fuel_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
-}
-draw_sprite(spr_fuel_bar, 0, _x, _y);
-
-_x -= 30;
-_y += 32;
-draw_text(_x, _y, "Depth: " + string(-ceil(y / 6.4)) + "ft");
-_y += _fh;
-draw_text(_x, _y, "$ " + string(money));
-_y += _fh;
