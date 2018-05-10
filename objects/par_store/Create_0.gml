@@ -1,4 +1,4 @@
-active = false;
+customer = noone;
 
 var _width  = obj_camera.width;
 var _height = obj_camera.height;

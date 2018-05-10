@@ -8,6 +8,8 @@ enum MODULE {
 	DRILL_Y
 }
 
+magnitude(2, 7);
+
 input_initialie();
 
 module_xoffset	   = [			  0,			   10,					   0];
@@ -68,6 +70,7 @@ fric = 1.4 / room_speed;
 image_xscale_draw = 1;
 image_yscale_draw = 1;
 image_angle_draw  = 0;
+draw_surf = surface_create(64, 64);
 image_xscale_target = image_xscale;
 
 draw_menu = noone;

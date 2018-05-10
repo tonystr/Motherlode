@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "obj_miningdeposit",
     "eventList": [
-        
+        {
+            "id": "04a3e030-0c9a-446c-9878-972a7f5e1cca",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "6a581cf0-e3bb-41c3-a262-ad9b0eafccb9"
+        },
+        {
+            "id": "e96376ff-b634-4467-9544-23fb02493846",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "6a581cf0-e3bb-41c3-a262-ad9b0eafccb9"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

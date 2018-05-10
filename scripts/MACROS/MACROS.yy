@@ -1,8 +1,8 @@
 {
-    "id": "53a14a2c-3568-4e25-81e3-5f4215435b5b",
+    "id": "6d9cc915-76e7-4b57-8bc1-22260370edf2",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "debug_message_parse_array",
+    "name": "MACROS",
     "IsCompatibility": false,
     "IsDnD": false
 }

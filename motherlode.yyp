@@ -223,14 +223,6 @@
             }
         },
         {
-            "Key": "53a14a2c-3568-4e25-81e3-5f4215435b5b",
-            "Value": {
-                "id": "1cf5ac2b-6157-4181-837a-b473abbc490e",
-                "resourcePath": "scripts\\debug_message_parse_array\\debug_message_parse_array.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "5689284f-4817-4fe1-9898-8119d3f041be",
             "Value": {
                 "id": "306dd872-61ec-4b7c-a175-cfd31c299cbc",
@@ -303,6 +295,14 @@
             }
         },
         {
+            "Key": "6174fcc4-b269-4036-8668-ec11c4266122",
+            "Value": {
+                "id": "56beea69-a2f8-49db-8af8-ac08d7998012",
+                "resourcePath": "sprites\\spr_drill_x_emerald\\spr_drill_x_emerald.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6814570d-8c83-490d-939d-61b977c904e2",
             "Value": {
                 "id": "267120b8-bae3-4ccf-8d96-29e7c4bb31cf",
@@ -332,6 +332,14 @@
                 "id": "edc351f3-b482-4f6f-b0f0-5ccb2b9ef68e",
                 "resourcePath": "objects\\obj_miningdeposit\\obj_miningdeposit.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6d9cc915-76e7-4b57-8bc1-22260370edf2",
+            "Value": {
+                "id": "c12aca44-3c27-4b7f-9c58-59fedd8b90df",
+                "resourcePath": "scripts\\MACROS\\MACROS.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -423,6 +431,14 @@
             }
         },
         {
+            "Key": "8288424f-bd4e-41e1-864c-31866c47f275",
+            "Value": {
+                "id": "d2a77cd7-81db-4829-a2c4-8a791de51e62",
+                "resourcePath": "sprites\\spr_drill_x_laser\\spr_drill_x_laser.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "82d0abcb-4667-45d9-b1eb-2e969eed846e",
             "Value": {
                 "id": "98086577-ae3d-4077-8540-c3f4dc6297c7",
@@ -435,6 +451,14 @@
             "Value": {
                 "id": "12a87c50-3bc3-4b97-9f18-46c642b06987",
                 "resourcePath": "sprites\\spr_propeller_anim\\spr_propeller_anim.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "85799623-69a6-46ce-bd66-2625c2b874c0",
+            "Value": {
+                "id": "3f355c92-e500-42c7-8e58-8149402dd9af",
+                "resourcePath": "sprites\\spr_drill_x_ruby\\spr_drill_x_ruby.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -767,6 +791,14 @@
             }
         },
         {
+            "Key": "d145603c-0f2f-4b60-8c40-1e83a33b93ca",
+            "Value": {
+                "id": "e851b59a-4435-4f1f-8ae7-62343cd9e482",
+                "resourcePath": "sprites\\spr_drill_x_amethyst\\spr_drill_x_amethyst.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d3fa5d51-37a7-45bd-90c1-8ebe3bddfccc",
             "Value": {
                 "id": "a4765cdc-c4a3-4329-bd5e-d528f710bbab",
@@ -855,6 +887,14 @@
             }
         },
         {
+            "Key": "e9bb1223-841b-4842-b0dc-39abc24f44f9",
+            "Value": {
+                "id": "a639475f-9245-40bb-a61f-d5d619c213d4",
+                "resourcePath": "sprites\\spr_drill_x_stock\\spr_drill_x_stock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "eb6c2bf4-d643-4bf9-9127-a127eb8d62e4",
             "Value": {
                 "id": "2805ca0d-14f6-4352-95dd-fa9d3cc92551",
@@ -927,6 +967,14 @@
             }
         },
         {
+            "Key": "fa592871-6dda-4b40-92a9-7e85bcd0fa79",
+            "Value": {
+                "id": "e8e0432c-3491-4326-aff8-f64d106597a3",
+                "resourcePath": "sprites\\spr_drill_x_gold\\spr_drill_x_gold.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fa876e62-85e3-42e2-ba1e-7c27daf03e5c",
             "Value": {
                 "id": "6f0aafd5-5c17-495e-bd39-ab39ad920126",
@@ -944,6 +992,7 @@
         }
     ],
     "script_order": [
+        "6d9cc915-76e7-4b57-8bc1-22260370edf2",
         "82d0abcb-4667-45d9-b1eb-2e969eed846e",
         "85b65d71-cb22-4d56-8756-710add8e5b82",
         "8b601018-0003-4a05-aba5-81597e139055",

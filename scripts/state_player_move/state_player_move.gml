@@ -66,7 +66,8 @@ if (yvel == 0) {
 	xvel -= xvel * fric * 2;	
 }
 
-if (xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0) || (yvel == 0 && key_yaxis > 0 && key_xaxis == 0) {
+if (xvel == 0 && key_xaxis != 0 && key_yaxis == 0 && yvel == 0) 
+|| (yvel == 0 && key_yaxis > 0 && key_xaxis == 0) {
 	if (!state_wait && angle_difference(dir_last, _dir) < 28) {
 		if (drill < drill_boundary) {
 			drill++;
@@ -102,7 +103,7 @@ if (place_meeting(x, y, par_store) && magnitude(xvel, yvel) < 160 / room_speed) 
 		camera_yoffset = _shop.y - y;
 		draw_menu = _shop.object_index;
 		
-		_shop.active = true;
+		_shop.customer = id;
 		
 		state = state_player_shop;
 		xvel = 0;

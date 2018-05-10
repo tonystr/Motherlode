@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "obj_upgradestation",
     "eventList": [
-        
+        {
+            "id": "c8858aa2-12b1-4e35-bfb7-3b1e6d93f5a6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "6ed35814-9462-4e07-a264-158dc203de41"
+        },
+        {
+            "id": "f0a1c05f-7f24-4d94-9f4a-029e243f0023",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "6ed35814-9462-4e07-a264-158dc203de41"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

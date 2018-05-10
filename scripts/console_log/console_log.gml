@@ -14,10 +14,7 @@ for(var i = 0; i < argument_count; i++) {
     _com = true;
     _spa = true;
     
-    if (is_array(_val)) {
-        _str += debug_message_parse_array(_val);
-
-    } else if (is_string(_val)) {
+    if (is_string(_val)) {
         var _lastchr  = string_char_at(_val, string_length(_val));
         _com = (_lastchr == string_lettersdigits(_lastchr));
         _spa = (_lastchr != " ");
@@ -31,3 +28,4 @@ for(var i = 0; i < argument_count; i++) {
 }
 
 show_debug_message(_str);
+return _str;
