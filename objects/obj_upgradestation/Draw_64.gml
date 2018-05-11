@@ -1,8 +1,8 @@
 if (customer == noone || !instance_exists(customer)) exit;
 event_inherited();
 
-var _pad = 8;
-var _gs = 16 + _pad;
+var _pad = 18;
+var _gs = 14 + _pad;
 
 for (var i = 0; i < UPTYPE.SIZE; i++) {
 	draw_sprite(upgrade[UPGRADE.DRILL, i], 
