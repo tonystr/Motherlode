@@ -1,16 +1,12 @@
 // if(live_call()) return live_enabled;
 
-image_speed = 0;
+input_initialie();
 
 enum MODULE {
 	PROPELLER,
 	DRILL_X,
 	DRILL_Y
 }
-
-magnitude(2, 7);
-
-input_initialie();
 
 module_xoffset	   = [			  0,			   10,					   0];
 module_yoffset	   = [			-17,		       -9,					   1];
@@ -20,6 +16,15 @@ module_prev		   = MODULE.DRILL_X;
 module_active	   = MODULE.DRILL_X;
 module_interp	   = 0;
 module_count	   = 3;
+
+// Components
+enum COMP {
+	DRILL,
+	PROPELLER,
+	HULL
+}
+
+comp_sprite = [spr_drill_stock];
 
 item_name	= [	"Reserve Fuel Tank",	// 0
 				"Hull Repair Nanobot",  // 1

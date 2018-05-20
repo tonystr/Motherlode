@@ -13,8 +13,6 @@ item_name	= [	"Reserve Fuel Tank",	// 0
 				"Plastic Explosive",	// 3
 				"Quantum Teleporter",	// 4
 				"Matter Transmitter"];	// 5
-item		= array_create(6, 16);
-item_button = [ord("F"), ord("R"), ord("X"), ord("C"), ord("Q"), ord("M")];
 item_price  = [	   3000,	 7500,	   2000,	 5000,	   4000,	10000];
 item_sprite = [spr_item_fueltank, 
 			   spr_item_nanobots, 
@@ -22,4 +20,4 @@ item_sprite = [spr_item_fueltank,
 			   spr_item_plasticexplosive, 
 			   spr_item_quantumtp, 
 			   spr_item_mattertsm];
-item_count  = array_length_1d(item);
+item_count  = array_length_1d(item_price);

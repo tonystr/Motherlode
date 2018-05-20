@@ -44,7 +44,7 @@ surface_set_target(draw_surf);
 				var _frac = 1 - clamp(_index / _sub_count, 0, 1);
 				if (_frac == 0) _frac = 1;
 				draw_sprite_general(
-					spr_drill_x_emerald, 0,
+					comp_sprite[COMP.DRILL], 0,
 					(1 - _frac) * 12, 0, _frac * 12, 16,
 					40 + (7 ) * (_modules[i] == MODULE.DRILL_X),
 					15 + (19) * (_modules[i] == MODULE.DRILL_Y),

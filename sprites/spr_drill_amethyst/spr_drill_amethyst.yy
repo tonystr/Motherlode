@@ -2,7 +2,7 @@
     "id": "d145603c-0f2f-4b60-8c40-1e83a33b93ca",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_drill_x_amethyst",
+    "name": "spr_drill_amethyst",
     "For3D": false,
     "HTile": false,
     "VTile": false,
