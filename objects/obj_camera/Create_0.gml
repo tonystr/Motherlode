@@ -1,5 +1,10 @@
 // if(live_call()) return live_enabled;
 
+application_surface_draw_enable(false);
+
+uni_palette_tex = shader_get_sampler_index(shd_palette, "paletteTex");
+uni_palette_uvs = shader_get_uniform(shd_palette, "paletteUVs");
+
 width  = 480;
 height = 270;
 
@@ -22,6 +27,9 @@ display_set_gui_size(width, height);
 
 camera_set_view_pos(camera, x, y);
 camera_set_view_size(camera, width, height);
+
+appapp_surf = surface_create(width, height);
+gui_surf = surface_create(width, height);
 
 window_set_position((display_get_width() - width * zoom) / 2, (display_get_height() - height * zoom)  / 2);
 window_set_caption("Motherlode");

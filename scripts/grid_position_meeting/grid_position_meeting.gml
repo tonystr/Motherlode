@@ -5,9 +5,10 @@
 /// @arg grid_x
 /// @arg grid_y
 /// @arg grid_size
+var _grid = argument2;
+if (_grid == undefined) return false;
 var _x = argument0 - argument3; 
 var _y = argument1 - argument4; 
-var _grid = argument2;
 var _size = argument5;
 
 _x = floor(_x / _size);

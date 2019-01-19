@@ -1,4 +1,7 @@
 /// @func set_comp(component, sprite[, instance]);
+/// @arg component
+/// @arg sprite
+/// @arg [instance]
 
 if (argument_count > 2) with(argument[2]) set_comp(argument[0], argument[1]);
 

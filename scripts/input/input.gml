@@ -2,6 +2,8 @@
 /// @arg button enum
 /// @arg type* enum - pressed/held/released (default: held)
 
+if (!global.input_active) return false;
+
 var _button = argument[0];
 var _type   = argument_count > 1 ? argument[1] : BTYPE.HELD;
 var _output = false;

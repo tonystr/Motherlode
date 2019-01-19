@@ -8,6 +8,13 @@ enum BUTTON {
 	DOWN,
 	BACK,
 	SELECT,
+	COMMANDLINE,
+	ITMFUELTANK,
+	ITMNANOBOTS,
+	ITMDYNAMITE,
+	ITMPLASTICEXPLOSIVE,
+	ITMQUANTUMTP,
+	ITMMATTERTSM,
 	COUNT
 }
 
@@ -33,5 +40,6 @@ _log += input_add(BUTTON.LEFT,	ord("A"), vk_left);
 _log += input_add(BUTTON.DOWN,	ord("S"), vk_down);
 _log += input_add(BUTTON.BACK,	vk_escape, vk_tab, vk_backspace);
 _log += input_add(BUTTON.SELECT,vk_enter, vk_space);
+_log += input_add(BUTTON.COMMANDLINE, 192); // [`]
 
-if (argument_count && argument[0]) return console_log(_log);
+if (true || argument_count && argument[0]) return console_log(_log);

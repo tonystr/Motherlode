@@ -1,6 +1,6 @@
 /// @func state_player_move
 
-var _dir   = point_direction(0, 0, key_xaxis, key_yaxis);
+var _dir = point_direction(0, 0, key_xaxis, key_yaxis);
 
 var _grav = (grav - yvel) * fric;
 
@@ -39,9 +39,21 @@ image_speed = abs(xvel);
 var _prev_xvel = xvel;
 var _prev_yvel = yvel;
 
-if (instance_exists(obj_chunk) && grid_meeting(x + xvel, y, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
+/*///////////////////////////////////////////////////////////////
+var _cam_right	=  ceil(obj_camera.x + obj_camera.width  / 2);
+var _cam_top	= floor(obj_camera.y - obj_camera.height / 2);
+var _cam_left	= floor(obj_camera.x - obj_camera.width  / 2);
+var _cam_bottom	=  ceil(obj_camera.y + obj_camera.height / 2);
+
+_cam_right	=  ceil(_cam_right	div (chunk_width  * grid_size));
+_cam_top	= floor(_cam_top	div (chunk_height * grid_size));
+_cam_left	= floor(_cam_left	div (chunk_width  * grid_size));
+_cam_bottom	=  ceil(_cam_bottom	div (chunk_height * grid_size));
+/*///////////////////////////////////////////////////////////////
+
+if (!noclip && instance_exists(obj_world) && world_meeting(x + xvel, y) != 0) {
 	var _sgn = sign(xvel);
-	while (!grid_meeting(x + _sgn, y, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
+	while (world_meeting(x + _sgn, y) == 0) {
 		x += _sgn;
 	}
 	
@@ -51,9 +63,9 @@ if (instance_exists(obj_chunk) && grid_meeting(x + xvel, y, obj_chunk.grid, obj_
 }
 x += xvel;
 
-if (instance_exists(obj_chunk) && grid_meeting(x, y + yvel, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
+if (!noclip && instance_exists(obj_world) && world_meeting(x, y + yvel) != 0) {
 	var _sgn = sign(yvel);
-	while (!grid_meeting(x, y + _sgn, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
+	while (world_meeting(x, y + _sgn) == 0) {
 		y += _sgn;
 	}
 	

@@ -2,6 +2,8 @@
 
 input_initialie();
 
+noclip = false;
+
 enum MODULE {
 	PROPELLER,
 	DRILL_X,
@@ -21,37 +23,44 @@ module_count	   = 3;
 enum COMP {
 	DRILL,
 	PROPELLER,
-	HULL
+	HULL,
+	TREADS,
+	EXHAUST,
+	SIZE
 }
 
-comp_sprite = [spr_drill_stock];
+comp_sprite = [spr_drill_stock, -1, spr_hull_stock, spr_treads_stock, spr_exhaust_stock];
 
-item_name	= [	"Reserve Fuel Tank",	// 0
-				"Hull Repair Nanobot",  // 1
-				"Dynamite",				// 2
-				"Plastic Explosive",	// 3
-				"Quantum Teleporter",	// 4
-				"Matter Transmitter"];	// 5
-item		= array_create(6, 16);
-item_button = [ord("F"), ord("R"), ord("X"), ord("C"), ord("Q"), ord("M")];
-item_price  = [	   3000,	 7500,	   2000,	 5000,	   4000,	10000];
-item_sprite = [spr_item_fueltank, 
-			   spr_item_nanobots, 
-			   spr_item_dynamite, 
-			   spr_item_plasticexplosive, 
-			   spr_item_quantumtp, 
-			   spr_item_mattertsm];
-item_count  = array_length_1d(item);
+item_name	= [];
+item_button = [];
+item_price  = [];
+item_sprite = [];
+
+var _items = obj_included.data[? "items"];
+for (var i = ds_list_size(_items) - 1; i >= 0; --i) {
+	var _prop = _items[| i];
+	
+	item_name[i] = _prop[? "name"];
+	var _keys = _prop[? "keybinds"];
+	input_add(BUTTON.ITMFUELTANK + i, ord(_keys[| 0]));
+	item_price[i] = _prop[? "price"];
+	item_sprite[i] = asset_get_index("spr_item_" + _prop[? "type"]);
+}
+
+item = array_create(ds_list_size(_items), 16);
+item_count = array_length_1d(item);
 
 shop_timer   = false;
 shop_entered = noone;
 
 fuel = 60;
 fuel_max = 60;
-fuel_per_second  = 0; // 1.1 / room_speed;
+fuel_per_second = 0; // 1.1 / room_speed;
 
 hull = 60;
 hull_max = 60;
+
+money = 0;
 
 gui_surf = -1;
 
@@ -83,6 +92,7 @@ draw_menu = noone;
 drill = 0;
 drill_spd = 37 / room_speed;
 drill_dir = 0;
+drilling = false;
 drill_grid_x = -1;
 drill_grid_y = -1;
 drill_start_x = x;
@@ -111,8 +121,6 @@ ore_sprite = [-1, spr_bronze, spr_iron, spr_silver, spr_gold];
 ore_name   = [-1, "Bronze",   "Iron",   "Silver",   "Gold"	];
 ore_price  = [-1, 100,		  400,		900,		1300	];
 
-money = 0;
-
 enum ITEM {
 	NONE,
 	BRONZE,
@@ -132,3 +140,27 @@ camera_xoffset = 0;
 camera_yoffset = 0;
 
 death_timer = 0;
+
+save_dir = -1;
+
+var _lds = obj_included.load_player;
+if (is_string(_lds)) { // Obvious
+	save_dir = _lds;
+	player_load(save_dir);
+	console_log("player loaded savefile: ", save_dir);
+} else if (_lds >= 0) { // Numbered save. Assume normal save format
+	save_dir = SDF_CHAR + string(_lds);
+	player_load(save_dir);
+	console_log("player loaded numbered savefile: ", save_dir);
+} else { // Write new save directory
+	var i = 0;
+	while (directory_exists(SDF_CHAR + string(i))) i++;
+
+	save_dir = SDF_CHAR + string(i);
+	directory_create(save_dir);
+	console_log("player created new savefile: ", save_dir);
+}
+
+if (!directory_exists(save_dir)) show_error("Failed to load player savefile, \"" + string(save_dir) + "\" is not a valid directory | " + string(_lds), true);
+
+player_save();

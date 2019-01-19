@@ -2,4 +2,4 @@
 /// @arg x
 /// @arg y
 
-return point_distance(0, 0, argument0, argument1);
+return sqrt(argument0 * argument0 + argument1 * argument1);

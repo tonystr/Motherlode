@@ -18,9 +18,13 @@ for(var i = 0; i < argument_count; i++) {
         var _lastchr  = string_char_at(_val, string_length(_val));
         _com = (_lastchr == string_lettersdigits(_lastchr));
         _spa = (_lastchr != " ");
-
-        
-        _str += _val;
+		
+		if (i == 0 && (_spa ? _lastchr : string_char_at(_val, string_length(_val) - 1)) == ":") {
+			_str = _val;
+			continue;
+		}
+		
+		_str += _val;
         
     } else {
         _str += string(_val);

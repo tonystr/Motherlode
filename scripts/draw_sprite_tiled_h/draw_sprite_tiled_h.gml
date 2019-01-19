@@ -13,7 +13,5 @@ _x %= _sze;
 _min = floor(_min / _sze) * _sze;
 
 for (var i = 0; i < _itr + 3; i++) {
-	draw_sprite(_spr, _sub, _min + _x + _sze*(i - 1), _y);
+	draw_sprite(_spr, _sub, _min + _x + _sze * (i - 1), _y);
 }
-
-//draw_sprite();

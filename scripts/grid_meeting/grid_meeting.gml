@@ -1,4 +1,4 @@
-/// @func grid_meeting();
+/// @func grid_meeting(x, y, grid, grid_x, grid_y, grid_size)
 /// @arg x
 /// @arg y
 /// @arg grid

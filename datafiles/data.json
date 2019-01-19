@@ -1,0 +1,104 @@
+{
+    "items": [{
+        "type": "fueltank",
+        "name": "Reserve Fuel Tank",
+        "keybinds": ["F"],
+        "price": 3000
+    }, {
+        "type": "nanobots",
+        "name": "Hull Repair Nanobot",
+        "keybinds": ["R"],
+        "price": 7500
+    }, {
+        "type": "dynamite",
+        "name": "Dynamite",
+        "keybinds": ["X"],
+        "price": 2000
+    }, {
+        "type": "plasticexplosive",
+        "name": "Plastic Explosive",
+        "keybinds": ["C"],
+        "price": 5000
+    }, {
+        "type": "quantumtp",
+        "name": "Quantum Teleporter",
+        "keybinds": ["Q"],
+        "price": 4000
+    }, {
+        "type": "mattertsm",
+        "name": "Matter Transmitter",
+        "keybinds": ["M"],
+        "price": 10000
+    }],
+    "components": [{
+        "name": "drills",
+        "data": [{
+            "type": "stock",
+            "price": 0
+        },{
+            "type": "amethyst",
+            "price": 750
+        }, {
+            "type": "emerald",
+            "price": 2000
+        }, {
+            "type": "ruby",
+            "price": 5000
+        }, {
+            "type": "gold",
+            "price": 20000
+        }, {
+            "type": "laser",
+            "price": 100000
+        }]
+    },{
+        "name": "hulls",
+        "data": [{
+            "type": "stock",
+            "price": 0
+        },{
+            "type": "amethyst",
+            "price": 750
+        }, {
+            "type": "emerald",
+            "price": 2000
+        }, {
+            "type": "ruby",
+            "price": 5000
+        }, {
+            "type": "gold",
+            "price": 20000
+        }, {
+            "type": "glass",
+            "price": 100000
+        }]
+    },{
+        "name": "treads",
+        "data": [{
+            "type": "stock",
+            "price": 0
+        },{
+            "type": "wheels",
+            "price": 600
+        },{
+            "type": "azure",
+            "price": 1800
+        },{
+            "type": "bigwheels",
+            "price": 5000
+        }]
+    }],
+    "ores": [{
+        "name": "Bronze",
+        "price": "100"
+    }, {
+        "name": "Iron",
+        "price": "400"
+    }, {
+        "name": "Silver",
+        "price": "900"
+    }, {
+        "name": "Gold",
+        "price": "1300"
+    }]
+}

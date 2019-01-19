@@ -6,7 +6,8 @@
     "children": [
         "a259e3e2-f366-477c-b75d-8b408bbbcd9e",
         "7100ef57-c585-490a-9b4b-2ccf7b42769c",
-        "f63997ff-4017-4d2a-955d-c01eb4ac9324"
+        "f63997ff-4017-4d2a-955d-c01eb4ac9324",
+        "100f363c-c0d0-42a4-9964-6023f8774838"
     ],
     "filterType": "GMScript",
     "folderName": "Input",

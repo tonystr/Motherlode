@@ -17,11 +17,11 @@ switch (action) {
 	case IACT.PLASTIC: _explode = true; destroy = false; break;
 	case IACT.DYNAMITE:	_explode = true; break;
 	case IACT.QUANTUM:	
-		with(creator) {
+		with (creator) {
 			x = random(room_width);
 			y = random(192)-128;
 			
-			if (grid_meeting(x, y, obj_chunk.grid, obj_chunk.x, obj_chunk.y, obj_chunk.grid_size)) {
+			if (world_position_meeting()) {
 				_explode = true;
 				hull -= 50;
 				other.x = x;
@@ -30,7 +30,7 @@ switch (action) {
 		}
 	break;
 	case IACT.MATTER:
-		creator.x = room_width *.46;
+		creator.x = room_width * .46;
 		creator.y = -32;
 	break;
 	
@@ -38,17 +38,15 @@ switch (action) {
 }
 
 if (_explode) {
-	if (instance_exists(obj_chunk) && tick % explosion2_time == 0) {
-		var _gs = obj_chunk.grid_size;
-		var _cx = floor((x - obj_chunk.x) / _gs);
-		var _cy = floor((y - obj_chunk.y) / _gs);
-		var _gw = obj_chunk.width;
-		var _gh = obj_chunk.height;
-		var _grid = obj_chunk.grid;
+	if (instance_exists(obj_world) && tick % explosion2_time == 0) {
+		var _gs = obj_world.grid_size;
+		var _cx = floor(x / _gs);
+		var _cy = floor(y / _gs);
 			
 		for (var _y = (_cy - 1 - (tick > 0)); _y <= (_cy + 1 + (tick > 0)); _y++) {
 			for (var _x = (_cx - 1 - (tick > 0)); _x <= (_cx + 1 + (tick > 0)); _x++) {
-				_grid[# median(_x, 0, _gw - 1), median(_y, 0, _gh - 1)] = 0;
+				if (world_grid_get(_x, _y) < 0) continue;
+				world_grid_set(_x, _y, 0);
 				
 				with (instance_create_layer(_x * _gs + _gs/2, _y * _gs + _gs/2, "Effects", obj_particle)) {
 					sprite_index = spr_explosion;

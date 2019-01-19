@@ -9,7 +9,7 @@ if (state_wait && !--state_wait) {
 }
 
 for (var i = 0; i < 6; i++) {
-	if (keyboard_check_pressed(item_button[i])) {
+	if (input(BUTTON.ITMFUELTANK + i, BTYPE.PRESSED)) {
 		if (item[i]) {
 			with (instance_create_layer(x, y, "Instances", obj_action_item)) {
 				action  = i;
