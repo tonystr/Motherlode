@@ -2,8 +2,13 @@
 /// @arg dir
 /// @arg [instance]
 
+console_log("player loading currently disabled");
+return; // TODO: fix this
+
 var _dir = argument[0] + "/player.sav";
 var _inst = argument_count > 1 ? argument[1] : id;
+
+/*
 
 console_log("BUFFER LOAD DIR:", _dir);
 
@@ -44,4 +49,4 @@ with (_inst) {
 	console_log("Loaded player_data");
 	
 	ds_map_destroy(_load);
-}
+}*/

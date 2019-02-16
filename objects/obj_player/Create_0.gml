@@ -17,7 +17,9 @@ module_sprite_anim = [spr_propeller_anim, spr_drill_x_anim, spr_drill_y_anim];
 module_prev		   = MODULE.DRILL_X;
 module_active	   = MODULE.DRILL_X;
 module_interp	   = 0;
-module_count	   = 3;
+// module_count	   = 3;
+
+
 
 // Components
 enum COMP {
@@ -29,10 +31,26 @@ enum COMP {
 	SIZE
 }
 
-comp_sprite = [spr_drill_stock, -1, spr_hull_stock, spr_treads_stock, spr_exhaust_stock];
+components = ds_map_create();
+
+var _comp_list = obj_included.data[? "components"];
+var _len = ds_list_size(_comp_list);
+
+for (var i = 0; i < _len; i++) {
+	
+	var _comps = _comp_list[|  i];
+	var _name  = _comps[? "name"];
+	var _data  = _comps[? "data"];
+	
+	components[? _name] = _data[| 0];	
+}
+
+console_log("encoded components:", json_encode(components));
+
+// comp_sprite = [spr_drill_stock, -1, spr_hull_stock, spr_treads_stock, spr_exhaust_stock];
 
 item_name	= [];
-item_button = [];
+// item_button = [];
 item_price  = [];
 item_sprite = [];
 
@@ -60,7 +78,7 @@ fuel_per_second = 0; // 1.1 / room_speed;
 hull = 60;
 hull_max = 60;
 
-money = 0;
+money = 300000;
 
 gui_surf = -1;
 
@@ -90,7 +108,9 @@ image_xscale_target = image_xscale;
 draw_menu = noone;
 
 drill = 0;
-drill_spd = 37 / room_speed;
+drill_base_spd = 37 / room_speed;
+drill_force = 1;
+drill_spd = drill_base_spd * drill_force;
 drill_dir = 0;
 drilling = false;
 drill_grid_x = -1;

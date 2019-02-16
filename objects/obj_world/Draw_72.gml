@@ -6,7 +6,7 @@ avg += _mwc;
 	
 console_log("average mwc:", avg / seed_counter);
 */
-
+			  
 var _cam_right	= floor(obj_camera.x + obj_camera.width  / 2);
 var _cam_top	= floor(obj_camera.y - obj_camera.height / 2);
 var _cam_left	= floor(obj_camera.x - obj_camera.width  / 2);
@@ -17,7 +17,7 @@ var _chunk_top		= floor(_cam_top	/ (chunk_height * grid_size));
 var _chunk_left		= floor(_cam_left	/ (chunk_width  * grid_size));
 var _chunk_bottom	= floor(_cam_bottom	/ (chunk_height * grid_size));
 
-if (!surface_exists(surface)) surface = surface_create(obj_camera.width, obj_camera.height);
+if (!surface_exists(surface)) surface = surface_create(obj_camera.width + 1, obj_camera.height + 1);
 surface_set_target(surface);
 draw_clear_alpha(c_white, 0);
 
@@ -37,4 +37,4 @@ for (var _y = _chunk_top; _y <= _chunk_bottom; _y++) {
 
 surface_reset_target();
 
-draw_surface(surface, obj_camera.x - obj_camera.width / 2, obj_camera.y  - obj_camera.height / 2);
+draw_surface(surface, _cam_left, _cam_top);

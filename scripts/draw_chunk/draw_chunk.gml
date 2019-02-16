@@ -22,8 +22,8 @@ var _grid = _chunk[? "grid"];
 var _width  = ds_grid_width(_grid);
 var _height = ds_grid_height(_grid);
 
-var _cx = obj_camera.x - obj_camera.width / 2;
-var _cy = obj_camera.y - obj_camera.height / 2;
+var _cx = floor(obj_camera.x - obj_camera.width  / 2);
+var _cy = floor(obj_camera.y - obj_camera.height / 2);
 
 for (var _y = _y1, _maxy = ds_grid_height(_grid); _y < _y2; _y++) {
 	for (var _x = _x1, _maxx = ds_grid_width(_grid); _x < _x2; _x++) {

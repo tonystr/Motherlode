@@ -2,9 +2,13 @@
 /// @arg [dir]
 /// @arg [instance]
 
+console_log("player saving currently disabled");
+return; // TODO: fix this
+
 var _dir = argument_count > 0 ? argument[0] : save_dir + "/player.sav";
 var _inst = argument_count > 1 ? argument[1] : id;
 
+/*
 with (_inst) {
 	
 	var _savecontent = "{";
@@ -14,10 +18,10 @@ with (_inst) {
 	}
 	_savecontent += string(item[i]) + "],\"comp_sprite\":[";
 	for (var i = 0, _its = array_length_1d(comp_sprite); i < _its - 1; i++) {
-		var _nam = sprite_get_name(comp_sprite[i]);
+		var _nam = sprite_get_name(comp_sprite(i));
 		_savecontent += _nam == "<undefined>" ? "-1," : "\"" + _nam + "\",";
 	}
-	var _nam = sprite_get_name(comp_sprite[i]);
+	var _nam = sprite_get_name(comp_sprite(i));
 	_savecontent += string(_nam == "<undefined>" ? "-1" : "\"" + _nam + "\"") + "],";
 	//comp_sprite = [spr_drill_stock, -1, spr_hull_stock, spr_treads_stock, spr_exhaust_stock];
 	_savecontent += "\"x\":\"" + string(x) + "\",";
@@ -35,4 +39,4 @@ with (_inst) {
 	file_text_close(_file);
 	
 	console_log("Saved player_data:", _savecontent);
-}
+}*/

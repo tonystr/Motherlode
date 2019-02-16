@@ -16,9 +16,9 @@ surface_set_target(draw_surf);
 	draw_clear_alpha(c_white, 0);
 
 	if (state != state_player_death) {
-		draw_sprite(comp_sprite[COMP.HULL], 0, 32, 32);
-		draw_sprite(comp_sprite[COMP.TREADS], image_index, 32, 32);
-		draw_sprite(comp_sprite[COMP.EXHAUST], 0, 32, 32);
+		draw_sprite(comp_sprite("hull"), 0, 32, 32);
+		draw_sprite(comp_sprite("treads"), image_index, 32, 32);
+		draw_sprite(comp_sprite("exhaust"), 0, 32, 32);
 	
 		var _modules = [module_active, module_prev];
 		module_interp++;
@@ -47,7 +47,7 @@ surface_set_target(draw_surf);
 				var _frac = 1 - clamp(_index / _sub_count, 0, 1);
 				if (_frac == 0) _frac = 1;
 				draw_sprite_general(
-					comp_sprite[COMP.DRILL], 0,
+					comp_sprite("drill"), 0,
 					(1 - _frac) * 12, 0, _frac * 12, 16,
 					40 + 7    * (_modules[i] == MODULE.DRILL_X),
 					15 + 19	  * (_modules[i] == MODULE.DRILL_Y),

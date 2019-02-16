@@ -31,28 +31,34 @@
         "price": 10000
     }],
     "components": [{
-        "name": "drills",
+        "name": "drill",
         "data": [{
             "type": "stock",
+            "force": 1,
             "price": 0
         },{
             "type": "amethyst",
+            "force": 1.2,
             "price": 750
         }, {
             "type": "emerald",
+            "force": 1.6,
             "price": 2000
         }, {
             "type": "ruby",
+            "force": 2.2,
             "price": 5000
         }, {
             "type": "gold",
+            "force": 2.6,
             "price": 20000
         }, {
             "type": "laser",
+            "force": 3,
             "price": 100000
         }]
     },{
-        "name": "hulls",
+        "name": "hull",
         "data": [{
             "type": "stock",
             "price": 0
@@ -86,6 +92,18 @@
         },{
             "type": "bigwheels",
             "price": 5000
+        }]
+    },{
+        "name": "exhaust",
+        "data": [{
+            "type": "stock",
+            "price": 0
+        },{
+            "type": "wheels",
+            "price": 600
+        },{
+            "type": "azure",
+            "price": 1800
         }]
     }],
     "ores": [{

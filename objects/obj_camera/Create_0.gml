@@ -1,17 +1,17 @@
 // if(live_call()) return live_enabled;
 
-application_surface_draw_enable(false);
+//application_surface_draw_enable(false);
 
-uni_palette_tex = shader_get_sampler_index(shd_palette, "paletteTex");
-uni_palette_uvs = shader_get_uniform(shd_palette, "paletteUVs");
+//uni_palette_tex = shader_get_sampler_index(shd_palette, "paletteTex");
+//uni_palette_uvs = shader_get_uniform(shd_palette, "paletteUVs");
 
 width  = 480;
 height = 270;
 
+zoom = 3;
+
 global.font = fnt_pixel8;
 draw_set_font(global.font);
-
-zoom = 3;
 
 y_offset = height div 6.5;
 
@@ -21,14 +21,13 @@ view_camera[0] = camera;
 view_enabled = true;
 view_visible[0] = true;
 
-surface_resize(application_surface, width, height);
+surface_resize(application_surface, width * zoom, height * zoom);
 window_set_size(width * zoom, height * zoom);
 display_set_gui_size(width, height);
 
 camera_set_view_pos(camera, x, y);
 camera_set_view_size(camera, width, height);
 
-appapp_surf = surface_create(width, height);
 gui_surf = surface_create(width, height);
 
 window_set_position((display_get_width() - width * zoom) / 2, (display_get_height() - height * zoom)  / 2);
