@@ -1,8 +1,8 @@
 {
-    "id": "3174c3f4-457f-494f-9f1b-ca3d2c41d777",
+    "id": "9b5845eb-56e3-4386-9078-39b29d728ac4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "surface_set_gui",
+    "name": "draw_line_pixel",
     "IsCompatibility": false,
     "IsDnD": false
 }

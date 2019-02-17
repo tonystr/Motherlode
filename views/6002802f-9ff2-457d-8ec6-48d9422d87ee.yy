@@ -10,7 +10,7 @@
         "100f363c-c0d0-42a4-9964-6023f8774838"
     ],
     "filterType": "GMScript",
-    "folderName": "Input",
+    "folderName": "input",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

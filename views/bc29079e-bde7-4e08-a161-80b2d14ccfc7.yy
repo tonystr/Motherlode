@@ -9,7 +9,7 @@
         "c7df723f-23a7-46d4-a08e-aea6ca4f2439"
     ],
     "filterType": "GMScript",
-    "folderName": "Inverse Kinematics",
+    "folderName": "inverse kinematics",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

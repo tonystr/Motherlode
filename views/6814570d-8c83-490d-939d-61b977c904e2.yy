@@ -9,7 +9,7 @@
         "fabc9b52-20fe-4678-914d-dcfb3efa097c"
     ],
     "filterType": "GMScript",
-    "folderName": "Textbox",
+    "folderName": "textbox",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

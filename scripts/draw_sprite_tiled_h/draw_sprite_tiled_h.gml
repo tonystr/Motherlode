@@ -1,13 +1,14 @@
 /// @func draw_sprite_tiled_h
-/// @arg spr,subimg,x,y,min_x,max_x
-var _spr = argument0,
-	_sub = argument1,
-	_x	 = argument2,
-	_y   = argument3,
-	_min = argument4,
-	_max = argument5,
-	_sze = sprite_get_width(_spr),
-	_itr = ceil(abs(_max - _min) / _sze);
+/// @args spr,subimg,x,y,min_x,max_x
+
+var _spr = argument0;
+var _sub = argument1;
+var _x	 = argument2;
+var _y   = argument3;
+var _min = argument4;
+var _max = argument5;
+var _sze = sprite_get_width(_spr);
+var _itr = ceil(abs(_max - _min) / _sze);
 	
 _x %= _sze;
 _min = floor(_min / _sze) * _sze;

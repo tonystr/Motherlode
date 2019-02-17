@@ -10,7 +10,7 @@
         "c1c33faf-b8c3-4c84-b3df-9bf564aa75dd"
     ],
     "filterType": "GMScript",
-    "folderName": "Chunk",
+    "folderName": "chunk",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

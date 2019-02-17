@@ -19,18 +19,6 @@ module_active	   = MODULE.DRILL_X;
 module_interp	   = 0;
 // module_count	   = 3;
 
-
-
-// Components
-enum COMP {
-	DRILL,
-	PROPELLER,
-	HULL,
-	TREADS,
-	EXHAUST,
-	SIZE
-}
-
 components = ds_map_create();
 
 var _comp_list = obj_included.data[? "components"];
@@ -79,8 +67,6 @@ hull = 60;
 hull_max = 60;
 
 money = 300000;
-
-gui_surf = -1;
 
 hit_timer = 0;
 hit_time  = room_speed * .36;

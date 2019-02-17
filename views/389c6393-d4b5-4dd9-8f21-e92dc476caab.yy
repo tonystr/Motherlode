@@ -12,7 +12,7 @@
         "2e1e4493-b52d-4b04-b5f1-3e5824814cec"
     ],
     "filterType": "GMScript",
-    "folderName": "Grid scripts",
+    "folderName": "grids",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -11,7 +11,7 @@
         "abd9eea7-e27f-4c62-845e-03055c3b0127"
     ],
     "filterType": "GMScript",
-    "folderName": "States",
+    "folderName": "states",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

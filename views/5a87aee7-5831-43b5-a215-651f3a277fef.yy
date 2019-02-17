@@ -9,7 +9,7 @@
         "23cdada8-3a83-4624-be6c-08a35fc264ea"
     ],
     "filterType": "GMScript",
-    "folderName": "Mersenne Twister",
+    "folderName": "mersenne twister",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

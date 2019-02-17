@@ -7,7 +7,7 @@
         "a46a8a04-c076-4324-a64e-1239f37ce62d"
     ],
     "filterType": "GMScript",
-    "folderName": "Strings",
+    "folderName": "strings",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

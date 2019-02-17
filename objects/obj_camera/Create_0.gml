@@ -28,8 +28,6 @@ display_set_gui_size(width, height);
 camera_set_view_pos(camera, x, y);
 camera_set_view_size(camera, width, height);
 
-gui_surf = surface_create(width, height);
-
 window_set_position((display_get_width() - width * zoom) / 2, (display_get_height() - height * zoom)  / 2);
 window_set_caption("Motherlode");
 

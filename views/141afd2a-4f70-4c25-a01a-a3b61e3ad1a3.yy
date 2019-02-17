@@ -12,7 +12,7 @@
         "58d06bb3-4007-439b-8356-5ffe3c5b6976"
     ],
     "filterType": "GMScript",
-    "folderName": "Colors",
+    "folderName": "colors",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
