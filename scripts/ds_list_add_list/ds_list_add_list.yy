@@ -1,8 +1,8 @@
 {
-    "id": "153d8637-415c-470f-8516-6cf5fa9c8dfd",
+    "id": "c59fe553-81f3-43c0-951b-7d08106d71e3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "input_add",
+    "name": "ds_list_add_list",
     "IsCompatibility": false,
     "IsDnD": false
 }

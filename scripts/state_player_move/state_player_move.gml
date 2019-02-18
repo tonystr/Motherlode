@@ -1,15 +1,16 @@
 /// @func state_player_move
 
 var _dir = point_direction(0, 0, key_xaxis, key_yaxis);
+var _spd = spd * point_distance(0, 0, key_xaxis, key_yaxis);
 
 var _grav = (grav - yvel) * fric;
 
 yvel += _grav;
 
 if (key_xaxis != 0 || key_yaxis != 0) {
-	xvel += (xacc + lengthdir_x(spd, _dir) - xvel) * fric;
+	xvel += (xacc + lengthdir_x(_spd, _dir) - xvel) * fric;
 	var _min = 8;
-	if (key_yaxis < 0) yvel += (yacc + lengthdir_y(spd + _grav / fric, _dir) - yvel) / (_min + inv_filled * 5 / room_speed) * _min * fric;
+	if (key_yaxis < 0) yvel += (yacc + lengthdir_y(_spd + _grav / fric, _dir) - yvel) / (_min + inv_filled * 5 / room_speed) * _min * fric;
 
 	if (key_xaxis != 0) image_xscale_target = sign(key_xaxis);
 	

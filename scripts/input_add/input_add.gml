@@ -1,16 +1,20 @@
-/// @func input_add()
+/// @func input_add_key()
 /// @arg button enum
 /// @arg ord...
 
 var _button = argument[0];
-var _list	= global.input_list[| _button];
 var _log	= "";
-
-if (argument_count < 2) show_error("Not enough arguments provided: input_add", true);
+var _scrs = [input_add_key, input_add_gp];
 
 for (var i = 1; i < argument_count; i++) {
-	ds_list_add(_list, argument[i]);
-	_log += "Added " + string(chr(argument[i])) + " to list:" + string(_button) + chr(10);
+	
+	var _scr = _scrs[i - 1];
+	var _arr = argument[i];
+	
+	var _args = [_button];
+	array_copy(_args, 1, _arr, 0, array_len(_arr));
+	
+	_log += script_execute_array(_scr, _args);
 }
 
 return _log;

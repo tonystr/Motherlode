@@ -43,4 +43,16 @@ fuel -= fuel_per_second;
 if (hit_timer && !--hit_timer) {
 	
 }
+
+//console_log("Attempting to connect to gamepad...");
+
+var _gpnum = gamepad_get_device_count();
+for (var i = 0; i < _gpnum; i++) {
+	if (gamepad_is_connected(i)) {
+		global.gamepad_id = i;
+		//console_log("Connected to gamepad:", i)
+	}
+}
+
+//if (global.gamepad_id == -1) console_log("Failed to connect to gamepad");
 	

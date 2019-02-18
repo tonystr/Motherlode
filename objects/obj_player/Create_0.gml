@@ -1,6 +1,6 @@
 // if(live_call()) return live_enabled;
 
-input_initialie();
+input_initialize();
 
 noclip = false;
 
@@ -48,7 +48,7 @@ for (var i = ds_list_size(_items) - 1; i >= 0; --i) {
 	
 	item_name[i] = _prop[? "name"];
 	var _keys = _prop[? "keybinds"];
-	input_add(BUTTON.ITMFUELTANK + i, ord(_keys[| 0]));
+	input_add(BUTTON.ITMFUELTANK + i, [ord(_keys[| 0])]);
 	item_price[i] = _prop[? "price"];
 	item_sprite[i] = asset_get_index("spr_item_" + _prop[? "type"]);
 }

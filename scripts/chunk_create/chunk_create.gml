@@ -39,12 +39,12 @@ if (_y == 0) {
 	with (par_store) {
 		var _left  = (x - sprite_xoffset)  / _grid_size;
 		var _right = (x - sprite_xoffset + sprite_width) / _grid_size;
-		console_log(object_get_name(object_index) + ":", 
+		/* console_log(object_get_name(object_index) + ":", 
 			_left / _cw,	// 4.31
 			_x + _cw,		// 19
 			_right / _cw,	// 4.38
 			_x				// 3
-		);
+		); */
 		if (_left / _cw < _x + _cw && _right / _cw > _x) {
 			for (var i = max(_left - _x * _cw, 0); i < min(_right - _x * _cw, _cw); i++) {
 				_grid[# i, 0] = -1;	
