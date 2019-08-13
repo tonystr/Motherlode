@@ -17,3 +17,5 @@ var _file = file_text_open_write(obj_world.save_dir + "/" + string(_chunk[? "x"]
 file_text_write_string(_file, _out);
 file_text_close(_file);
 console_log("Wrote:", _out);
+
+// massive memory leaks dude

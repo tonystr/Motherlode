@@ -1,4 +1,4 @@
-/// @func world_grid_get(x, y, value)
+/// @func world_grid_set(x, y, value)
 /// @arg x
 /// @arg y
 /// @arg value

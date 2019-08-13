@@ -1,4 +1,13 @@
 
+console_log(
+	"commented json:", 
+	json_encode(json_decode(@'
+		{
+			"values": [1, 2, 3, 4, 5]
+		}
+	'))
+);
+
 grid_size = 32;
 
 surface = -1;

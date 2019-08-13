@@ -98,12 +98,6 @@
         "data": [{
             "type": "stock",
             "price": 0
-        },{
-            "type": "wheels",
-            "price": 600
-        },{
-            "type": "azure",
-            "price": 1800
         }]
     }],
     "ores": [{

@@ -61,7 +61,7 @@ shop_entered = noone;
 
 fuel = 60;
 fuel_max = 60;
-fuel_per_second = 0; // 1.1 / room_speed;
+fuel_per_second = 1.1 / room_speed;
 
 hull = 60;
 hull_max = 60;
