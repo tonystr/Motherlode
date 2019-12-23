@@ -37,6 +37,8 @@ if (drill_grid_x < 0 ||
 	exit;	
 }*/
 
+fuel -= fuel_per_second * 2.8;
+
 x += lengthdir_x(drill_spd * (1 - (y / room_height)), drill_dir);
 y += lengthdir_y(drill_spd * (1 - (y / room_height)), drill_dir);
 

@@ -38,8 +38,6 @@ if (!shop_timer-- && input(BUTTON.BACK, BTYPE.PRESSED)) inv_visible ^= 1;
 image_angle_draw = lerp(image_angle_draw, -key_xaxis * 16 * (key_yaxis < 0), .1);
 image_xscale_draw += (image_xscale_target - image_xscale_draw) * .2;
 
-fuel -= fuel_per_second;
-
 if (hit_timer && !--hit_timer) {
 	
 }

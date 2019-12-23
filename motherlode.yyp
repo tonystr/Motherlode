@@ -895,6 +895,14 @@
             }
         },
         {
+            "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
+            "Value": {
+                "id": "878229e0-d986-4c46-8b5e-e6d786dc8252",
+                "resourcePath": "options\\html5\\options_html5.yy",
+                "resourceType": "GMHtml5Options"
+            }
+        },
+        {
             "Key": "75c0f126-1919-47f9-8493-eb92514d4d11",
             "Value": {
                 "id": "f7797b0a-6f29-409a-85bb-28e7cbe05e66",
@@ -1012,6 +1020,14 @@
                 "id": "98086577-ae3d-4077-8540-c3f4dc6297c7",
                 "resourcePath": "scripts\\draw_sprite_angle\\draw_sprite_angle.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8427047f-9ef8-4c77-89f3-9c20623d07b6",
+            "Value": {
+                "id": "99b8f907-e7e7-4b16-8d7b-046eb6ee930f",
+                "resourcePath": "options\\ios\\options_ios.yy",
+                "resourceType": "GMiOSOptions"
             }
         },
         {
@@ -1143,6 +1159,14 @@
             }
         },
         {
+            "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
+            "Value": {
+                "id": "44d95064-1331-4921-85bf-e844df8d85e6",
+                "resourcePath": "options\\tvos\\options_tvos.yy",
+                "resourceType": "GMtvOSOptions"
+            }
+        },
+        {
             "Key": "9390858f-b4e9-43e1-afdc-0d1025e7a232",
             "Value": {
                 "id": "b0da9a8e-8c5e-4af4-aab0-5957ff3d71f8",
@@ -1244,6 +1268,14 @@
                 "id": "3580e73c-3c75-4117-baaf-713ab183600f",
                 "resourcePath": "scripts\\inv_add\\inv_add.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "267dcb94-47f3-4e73-9ccc-671e2ed95957",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
@@ -1788,6 +1820,14 @@
                 "id": "ee9a5922-9bf0-48dd-b104-908b8751addf",
                 "resourcePath": "objects\\obj_particle\\obj_particle.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
+            "Value": {
+                "id": "2ec9af80-4758-4238-a989-2398b2d13e95",
+                "resourcePath": "options\\android\\options_android.yy",
+                "resourceType": "GMAndroidOptions"
             }
         },
         {
