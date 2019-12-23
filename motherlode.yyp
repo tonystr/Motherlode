@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "2bfc531c-6451-4b17-a70b-324c4e3c7bab",
+            "Value": {
+                "id": "305a4976-55dd-4573-94a4-f32a884bf082",
+                "resourcePath": "sprites\\spr_petrolstation\\spr_petrolstation.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2ce4710a-dfd9-44a7-84a6-8647e6eed71b",
             "Value": {
                 "id": "b385039e-097f-428f-8865-4cf7426f33e2",
@@ -1812,6 +1820,14 @@
                 "id": "bd43b88a-c2eb-4da6-97bf-42a1a9031f92",
                 "resourcePath": "scripts\\arm_move_towards\\arm_move_towards.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e2680edf-8a60-49dd-8a7f-dbe3c58aad22",
+            "Value": {
+                "id": "3e2f7957-37ce-4c4a-b628-50ad84c28034",
+                "resourcePath": "objects\\obj_petrolstation\\obj_petrolstation.yy",
+                "resourceType": "GMObject"
             }
         },
         {
