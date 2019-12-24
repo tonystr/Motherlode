@@ -89,7 +89,15 @@ if (_selecti >= 0 && _selecti < _asize) {
 // Tabs
 draw_set_color($7027e5);
 var _pd = 4;
-draw_line_width(_c[0] - _pd, _c[1] + _pd + _size * 2, _c[0] + _size * _comps_size, _c[1] + _pd + _size * 2, 1);
+//draw_line_width(_c[0] - _pd, _c[1] + _pd + _size * 2, _c[0] + _size * _comps_size, _c[1] + _pd + _size * 2, 1);
+draw_rect(
+	_c[0],
+	_c[1],
+	_c[2] + _pd / 2,
+	_c[1] + _pad * 2 + _pd * 2 + 1,
+	c_black,
+	.2
+);
 draw_set_color(c_white);
 for (var i = 0; i < _comps_size; i++) {
 	
@@ -130,6 +138,13 @@ var _comp_map = components[| tab];
 var _data = _comp_map[? "data"];
 
 for (var i = 0, _asize = ds_list_size(_data); i < _asize; i++) {
+	
+	var _comp_map = components[| tab];
+	var _name = _comp_map[? "name"];
+	var _data = _comp_map[? "data"];
+	var _comp = _data[| i];
+	var _spr  = asset_get_index("spr_" + _name + "_" + _comp[? "type"]);
+	
 	var _ix = i  %  _mod;
 	var _iy = i div _mod;
 	var _x = _c[0] + _pad + _ix * (_size + _pad);
@@ -143,12 +158,6 @@ for (var i = 0, _asize = ds_list_size(_data); i < _asize; i++) {
 		draw_set_alpha(1);
 	}
 	
-	
-	var _comp_map = components[| tab];
-	var _name = _comp_map[? "name"];
-	var _data = _comp_map[? "data"];
-	var _comp = _data[| i];
-	var _spr  = asset_get_index("spr_" + _name + "_" + _comp[? "type"]);
 	
 	if (_ix == menu_selectx && _iy == menu_selecty) {
 		draw_sprite_ext(_spr, 0, _dx + 1, _spy, 1, 1, 0, c_black, 1);	
