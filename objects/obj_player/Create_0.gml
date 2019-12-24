@@ -66,7 +66,7 @@ fuel_per_second = 1.1 / room_speed;
 hull = 60;
 hull_max = 60;
 
-money = 300000;
+money = 0;
 
 hit_timer = 0;
 hit_time  = room_speed * .36;
