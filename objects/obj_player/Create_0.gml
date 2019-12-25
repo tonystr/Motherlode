@@ -3,6 +3,7 @@
 input_initialize();
 
 noclip = false;
+step = 0;
 
 enum MODULE {
 	PROPELLER,

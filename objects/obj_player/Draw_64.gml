@@ -98,6 +98,8 @@ draw_sprite(spr_hull_bar, 0, _x, _y);
 
 _x += 30;
 
+#region Fuel
+
 if (fuel > 0) {
 	_hullpx = ((fuel - 2.4) / (fuel_max - 2.4)) * 19;
 	_shrink = min(fuel, 3) / 3;
@@ -107,6 +109,22 @@ if (fuel > 0) {
 	draw_sprite_ext(spr_fuel_bar, 3, _x + (1 - _shrink) * 16, _y + (1 - _shrink) * 28 - _hullpx + (1 - _shrink), _shrink, _shrink, 0, c_white, 1);
 }
 draw_sprite(spr_fuel_bar, 0, _x, _y);
+if (fuel < fuel_max / 4.5) {
+	draw_set_font(fnt_pixel8);
+	var _critical = fuel < fuel_max / 9;
+	var _max   = room_speed * (_critical ? .05 : .1);
+	var _blink = (step / _max) % _max < _max * .5;
+	
+	draw_set_color($442730);
+	draw_set_alpha(.4);
+	draw_text(_x + 25, _y + 21, _critical ? "FUEL CRITICAL!" : "FUEL LOW");
+	draw_set_color(_blink ? c_white : c_red);
+	draw_set_alpha(1);
+	draw_text(_x + 26, _y + 20, _critical ? "FUEL CRITICAL!" : "FUEL LOW");
+	draw_set_color(c_white);
+}
+
+#endregion;
 
 _x = 2;
 _y += 32;

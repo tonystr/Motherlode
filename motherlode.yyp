@@ -343,6 +343,14 @@
             }
         },
         {
+            "Key": "343ccc3f-e77a-4942-99f2-f406ffa94e35",
+            "Value": {
+                "id": "d3993e4a-3d38-4c2f-b7b8-5411da010b3e",
+                "resourcePath": "views\\343ccc3f-e77a-4942-99f2-f406ffa94e35.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "349f4913-a16c-4e99-87c5-a48c1c245962",
             "Value": {
                 "id": "5a72bb7f-7e61-484e-b634-9dafd27d832e",
@@ -908,6 +916,14 @@
                 "id": "878229e0-d986-4c46-8b5e-e6d786dc8252",
                 "resourcePath": "options\\html5\\options_html5.yy",
                 "resourceType": "GMHtml5Options"
+            }
+        },
+        {
+            "Key": "75b0cd08-855c-45cc-8391-50e59882bbbb",
+            "Value": {
+                "id": "904aa723-9ec0-4c41-9550-307822d8d2c8",
+                "resourcePath": "sprites\\spr_stock_fueltank\\spr_stock_fueltank.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

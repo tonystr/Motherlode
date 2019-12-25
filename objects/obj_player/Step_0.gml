@@ -1,7 +1,11 @@
 // if(live_call()) return live_enabled;
 
+step++;
+
 key_xaxis = input(BUTTON.RIGHT) - input(BUTTON.LEFT);
 key_yaxis = input(BUTTON.DOWN)  - input(BUTTON.UP);
+
+fuel -= fuel_per_second * .1;
 
 if (state_wait && !--state_wait) {
 	if (state_wait_state != noone) state = state_wait_state;
