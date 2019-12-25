@@ -52,9 +52,18 @@ var _sx = lerp(_c[0], _midx, .5) - _width / 2;
 var _sy = lerp(_c[1], _c[3], .5) - _height / 2 + (_total <= 0);
 var _pressed = false;
 			
-if (input(BUTTON.SELECT, BTYPE.PRESSED) || 
-	(mouse_check_button_pressed(mb_left) && point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _sx, _sy, _sx + _width, _sy + _height))) {
-	with(customer) {
+if (input(BUTTON.SELECT, BTYPE.PRESSED) || (
+	mouse_check_button_pressed(mb_left) && 
+	point_in_rectangle(
+		device_mouse_x_to_gui(0), 
+		device_mouse_y_to_gui(0), 
+		_sx, 
+		_sy, 
+		_sx + _width, 
+		_sy + _height
+	)
+)) {
+	with (customer) {
 		money += _total;
 		for (var i = 0; i < inv_slots; i++) {
 			inv[# i % inv_width, i div inv_width] = ITEM.NONE;

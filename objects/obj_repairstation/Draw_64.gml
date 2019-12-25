@@ -23,7 +23,7 @@ draw_text(_mx, _my, "Full Repair");
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 			
-if (_select && input(BUTTON.SELECT, BTYPE.PRESSED) || mouse_check_button_pressed(mb_left)) {
+if (input(BUTTON.SELECT, BTYPE.PRESSED) || (_select && mouse_check_button_pressed(mb_left))) {
 	with (customer) {
 		if (hull == hull_max) {
 			textbox_add("Hull is already at max", -1, true);	
