@@ -922,7 +922,7 @@
             "Key": "75b0cd08-855c-45cc-8391-50e59882bbbb",
             "Value": {
                 "id": "904aa723-9ec0-4c41-9550-307822d8d2c8",
-                "resourcePath": "sprites\\spr_stock_fueltank\\spr_stock_fueltank.yy",
+                "resourcePath": "sprites\\spr_fueltank_stock\\spr_fueltank_stock.yy",
                 "resourceType": "GMSprite"
             }
         },

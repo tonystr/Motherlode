@@ -94,6 +94,12 @@
             "price": 5000
         }]
     },{
+        "name": "fueltank",
+        "data": [{
+            "type": "stock",
+            "price": 0
+        }]
+    },{
         "name": "exhaust",
         "data": [{
             "type": "stock",
