@@ -103,11 +103,17 @@ for (var i = 0; i < _comps_size; i++) {
 	
 	//if (!array_length_2d(upgrade, i)) continue;
 	
+	var _comp_first = components[| i];
+	var _name = _comp_first[? "name"];
+	var _data = _comp_first[? "data"];
+	var _comp = _data[| 0];
+	var _spr  = asset_get_index("spr_" + _name + "_" + _comp[? "type"]);
+	
 	var _ix = i;
 	var _iy = -1;
 	var _x = _c[0] + _pad + _ix * (_size + _pad);
 	var _y = _c[1] + _pad;
-	var _spy = _c[1] + _pad + (i div _mod) * (_size + _pad);
+	var _spy = _c[1] + _pad;
 				
 	if (_ix == _mgx && _iy == _mgy) {
 		draw_set_alpha(.1);
@@ -122,11 +128,6 @@ for (var i = 0; i < _comps_size; i++) {
 	//	draw_sprite_ext(upgrade[tab, i], 0, _x, _spy + 1, 1, 1, 0, c_black, 1);
 	//}
 	
-	var _comp_first = components[| i];
-	var _name = _comp_first[? "name"];
-	var _data = _comp_first[? "data"];
-	var _comp = _data[| 0];
-	var _spr  = asset_get_index("spr_" + _name + "_" + _comp[? "type"]);
 	
 	var _offx = sprite_get_xoffset(_spr) - sprite_get_width(_spr)  / 2;
 	var _offy = sprite_get_yoffset(_spr) - sprite_get_height(_spr) / 2;
