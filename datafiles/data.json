@@ -94,16 +94,31 @@
             "price": 5000
         }]
     },{
-        "name": "fueltank",
+        "name": "exhaust",
         "data": [{
             "type": "stock",
             "price": 0
         }]
     },{
-        "name": "exhaust",
+        "name": "fueltank",
         "data": [{
             "type": "stock",
             "price": 0
+        }, {
+            "type": "amethyst",
+            "price": 1000
+        }, {
+            "type": "emerald",
+            "price": 2150
+        }, {
+            "type": "ruby",
+            "price": 6000
+        }, {
+            "type": "gold",
+            "price": 30000
+        }, {
+            "type": "freezer",
+            "price": 115000
         }]
     }],
     "ores": [{

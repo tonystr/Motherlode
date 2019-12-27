@@ -479,6 +479,14 @@
             }
         },
         {
+            "Key": "46a421fd-21bb-44d7-893f-31e5d2c48814",
+            "Value": {
+                "id": "d04e5c1f-d204-49c0-a471-83cfdadb9518",
+                "resourcePath": "sprites\\spr_fueltank_gold\\spr_fueltank_gold.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "46ea552e-3709-479e-b6ab-8d122b508370",
             "Value": {
                 "id": "729477e9-dc1e-4949-b0b5-ceed2cb1e4cb",
@@ -524,6 +532,14 @@
                 "id": "6fe5abcb-1bf9-400a-be68-e4b366defd13",
                 "resourcePath": "scripts\\arm_initialize\\arm_initialize.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4b89d5cb-adbc-4fb9-a83b-a82de284c2a9",
+            "Value": {
+                "id": "fdef05ad-b93b-4887-a2c7-740e86199a74",
+                "resourcePath": "sprites\\spr_fueltank_emerald\\spr_fueltank_emerald.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -604,6 +620,14 @@
                 "id": "306dd872-61ec-4b7c-a175-cfd31c299cbc",
                 "resourcePath": "views\\5689284f-4817-4fe1-9898-8119d3f041be.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "582afd68-2a3f-4ad7-b8ae-135eccad6b04",
+            "Value": {
+                "id": "92c08d08-e28d-4bf2-bcc6-4e2d07fbbd3d",
+                "resourcePath": "sprites\\spr_fueltank_freezer\\spr_fueltank_freezer.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1644,6 +1668,22 @@
                 "id": "ee37e767-8520-4246-ab75-634afd29adb6",
                 "resourcePath": "scripts\\draw_button_fancy\\draw_button_fancy.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c9db00a1-22a1-448b-b141-1b915897fedd",
+            "Value": {
+                "id": "994f3424-8056-429a-840f-4e89c6ed5c39",
+                "resourcePath": "sprites\\spr_fueltank_amethyst\\spr_fueltank_amethyst.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ca8fb5e4-58d6-4ae1-b3eb-9b189e307686",
+            "Value": {
+                "id": "34a97d90-055a-4209-a0c9-79bee6fe8780",
+                "resourcePath": "sprites\\spr_fueltank_ruby\\spr_fueltank_ruby.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
