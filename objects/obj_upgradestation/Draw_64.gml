@@ -33,7 +33,8 @@ if (_buyi >= 0 && _buyi < 6) {
 }
 var _pressed = false;
 
-// Button presses
+#region Button presses
+
 if (input(BUTTON.SELECT, BTYPE.PRESSED) || mouse_check_button_pressed(mb_left)) {
 		
 	// Buy button
@@ -49,14 +50,14 @@ if (input(BUTTON.SELECT, BTYPE.PRESSED) || mouse_check_button_pressed(mb_left)) 
 	}
 }
 
+#endregion;
+
 draw_button_fancy(_sprite, _x, _y + _pressed * 2, _buyable, true);
 
-if (!_pressed) {
-	if (mouse_check_button_pressed(mb_left) || input(BUTTON.SELECT, BTYPE.PRESSED)) {
-		menu_selectx = _mgx;
-		menu_selecty = _mgy;
-		menu_string = "";
-	}
+if (!_pressed && (mouse_check_button_pressed(mb_left) || input(BUTTON.SELECT, BTYPE.PRESSED))) {
+	menu_selectx = _mgx;
+	menu_selecty = _mgy;
+	menu_string = "";
 }
 
 var _item_price = "";

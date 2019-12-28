@@ -103,22 +103,28 @@
         "name": "fueltank",
         "data": [{
             "type": "stock",
-            "price": 0
+            "price": 0,
+            "capacity": 60
         }, {
             "type": "amethyst",
-            "price": 1000
+            "price": 1000,
+            "capacity": 130
         }, {
             "type": "emerald",
-            "price": 2150
+            "price": 2150,
+            "capacity": 250
         }, {
             "type": "ruby",
-            "price": 6000
+            "price": 6000,
+            "capacity": 600
         }, {
             "type": "gold",
-            "price": 30000
+            "price": 30000,
+            "capacity": 1450
         }, {
             "type": "freezer",
-            "price": 115000
+            "price": 115000,
+            "capacity": 3800
         }]
     }],
     "ores": [{
